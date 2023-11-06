@@ -1,0 +1,25 @@
+game_matrix = [[Нет, Нет, Нет], [Нет, Нет, Нет], [Нет, Нет, Нет]]
+game_is_on = Истина
+пока game_is_on:
+    # Крестик — латинская буква X, нолик — латинская буква O
+    #Ходы принимаются в формате [0][0] = "X" или [2][1] = "О"
+    перемещение = ввод()
+    exec("game_matrix" + ход)
+    для строки в game_matrix:
+        печать (строка)
+    
+    ссылочная_матрица = [
+        game_matrix[0],
+        game_matrix[1],
+        game_matrix[2],
+        [i[0] для i в game_matrix],
+        [i[1] для i в game_matrix],
+        [i[2] для i в game_matrix],
+        [game_matrix[0][0], game_matrix[1][1], game_matrix[2][2]],
+        [game_matrix[0][2], game_matrix[1][1], game_matrix[2][0]]
+    ]
+    для элемента в reference_matrix:
+        результат = список (набор (элемент))
+        если len(result) == 1 и result[0] != Нет:
+            print("Игра окончена!")
+            game_is_on = Ложь
